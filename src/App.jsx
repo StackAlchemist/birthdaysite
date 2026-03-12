@@ -452,7 +452,7 @@ export default function BirthdaySite() {
     document.head.appendChild(s);
   }, []);
 
-  const [gateVisible, setGateVisible] = useState(true); // ← change to true to re-enable gate
+  const [gateVisible, setGateVisible] = useState(false); // ← change to true to re-enable gate
   const [gateHidden,  setGateHidden]  = useState(false);
   const [gateClock,   setGateClock]   = useState({days:"00",hrs:"00",min:"00",sec:"00"});
   const [letterOpen,  setLetterOpen]  = useState(false);
