@@ -135,7 +135,7 @@
     .media-slot.card-visible { opacity:1; transform:translateY(0) scale(1); }
     .media-slot:hover        { box-shadow:0 20px 60px #e0507a22; }
     .media-slot.photo-slot   { aspect-ratio:4/5; }
-    .media-slot.video-slot   { aspect-ratio:16/9; }
+    .media-slot.video-slot   { aspect-ratio:4/5; }
     .slot-placeholder { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.8rem; pointer-events:none; }
     .slot-placeholder .ph-icon { font-size:2.8rem; opacity:.45; }
     .slot-placeholder .ph-text { font-style:italic; color:var(--muted); font-size:.95rem; text-align:center; padding:0 1.2rem; }
@@ -224,6 +224,14 @@
     <span class="hero-heart">💕</span>
     <div class="scroll-hint"><span>scroll to explore</span><span class="arrow">↓</span></div>
   </section>
+  <script>
+    // Ensure videos start muted for autoplay and UX
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('video').forEach(function(video){
+        video.muted = true;
+      });
+    });
+  </script>
 
   <!-- wave: bg=cream, fills blush below -->
   <div class="wave" style="background:#fff5f8;">
@@ -325,7 +333,7 @@
   <!-- ▓▓ VIDEOS  (bg = blush) ▓▓ -->
   <section id="videos">
     <span class="section-label">moving memories</span>
-    <h2 class="section-title">Our Favourite Moments 🎬</h2>
+    <h2 class="section-title"> "Video Perfect" Moments 🎬</h2>
     <div class="gallery-grid" id="videoGrid"></div>
   </section>
 
@@ -521,9 +529,9 @@
     /* ── WISHES ── */
     [{e:'🌸',t:"May this year bring you more joy, laughter, and love than your heart can hold — and may you always know you deserve every bit of it."},
      {e:'🎂',t:"Another year of being absolutely amazing. Another year of making the world a better place just by being you. Cheers to the birthday girl!"},
-     {e:'💫',t:"May every dream you carry quietly in your heart find its wings this year. You've planted so many seeds — this is your season to bloom."},
-     {e:'🥂',t:"Here's to the woman who turns ordinary moments into magic, who loves fiercely and laughs freely. May your day be as extraordinary as you are."},
-     {e:'🌹',t:"You are the poem the universe wrote when it was feeling especially inspired. Happy birthday to the most beautiful soul I know."},
+     {e:'💫',t:"May every dream you carry quietly in your heart find its wings this year."},
+     {e:'🥂',t:"Here's to the woman who turns ordinary moments into magic, who loves and laughs freely. May your day be as extraordinary as you are."},
+     {e:'🌹',t:"You are the poem the universe wrote when it was feeling especially inspired. Happy birthday to one of the most beautiful souls I know."},
      {e:'🎀',t:"May this birthday mark the beginning of your most glorious chapter yet — filled with adventures, milestones, and all the love you give so freely returned tenfold."},
     ].forEach(w => {
       const c = document.createElement('div'); c.className='wish-card';
